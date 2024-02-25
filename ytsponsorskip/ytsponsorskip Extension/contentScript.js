@@ -14,18 +14,27 @@ function getCurrentYouTubeVideoId() {
 
 async function fetchVideoSegments(videoId) {
   try {
-    const response = await fetch("http://localhost:8000/ad", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ video_id: videoId }),
-    });
+    const response = await fetch(
+      "https://sponsorskip-api.azurewebsites.net/ad",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ video_id: videoId }),
+      }
+    );
     //   if (!response.ok) {
     //     throw new Error(`API call failed: ${response.statusText}`);
     //   }
     const data = await response.json();
-    return data.response.segments;
+    // return data.response.segments;
+    return [
+      {
+        start: 289.72,
+        end: 366.08,
+      },
+    ];
   } catch (error) {
     return [];
   }

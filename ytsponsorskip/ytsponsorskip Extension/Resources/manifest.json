@@ -1,20 +1,22 @@
 {
   "manifest_version": 3,
-  "name": "YouTube SponsorSkip",
+  "default_locale": "en",
+
+  "name": "__MSG_extension_name__",
+  "description": "__MSG_extension_description__",
   "version": "1.0",
-  "description": "Skip in-video ads and get straight to the content!",
-  "permissions": ["tabs", "activeTab", "webNavigation", "storage"],
+
   "background": {
     "service_worker": "background.js"
   },
+
   "content_scripts": [
     {
-      "matches": ["*://*.youtube.com/*"],
       "js": ["contentScript.js"],
-      "run_at": "document_idle"
+      "matches": ["*://*.youtube.com/*"]
     }
   ],
-  "host_permissions": ["*://www.youtube.com/*"],
+
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -27,5 +29,8 @@
     "16": "images/icon16.png",
     "48": "images/icon48.png",
     "128": "images/icon128.png"
-  }
+  },
+
+  "permissions": ["tabs", "activeTab", "webNavigation", "storage"],
+  "host_permissions": ["*://www.youtube.com/*"]
 }

@@ -10,6 +10,7 @@ Deprecated==1.2.14
 distro==1.9.0
 exceptiongroup==1.2.0
 fastapi==0.103.2
+gunicorn==21.2.0
 h11==0.14.0
 httpcore==0.17.3
 httpx==0.24.1
