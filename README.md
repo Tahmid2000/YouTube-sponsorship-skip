@@ -13,3 +13,6 @@ This was build using ChatGPT4, which analyzes the video for the sponshorship seg
 # ToDo:
 - Publish extensions to Chrome and App Store
 - Add instructions for enabling extension in Safari
+
+# References:
+- YouTube Transcript API: `https://github.com/jdepoix/youtube-transcript-api`
